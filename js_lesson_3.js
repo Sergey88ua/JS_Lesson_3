@@ -73,20 +73,18 @@ function checkSavings() {
 checkSavings();
 
 function chooseOptExpenses() {
-  for (let i = 0; i < 3; i++) {
-    let optionalExpensesItem = prompt('Введите не обязательную статью расходов в этом месяце', ''),
-      optionalExpensesCost = +prompt('Во сколько обойдется?', '');
+  for (let i = 1; i <= 3; i++) {
+    let optionalExpensesItem = prompt('Введите не обязательную статью расходов в этом месяце', '');
 
     if ((typeof (optionalExpensesItem)) === 'string' &&
       typeof (optionalExpensesItem) != '' &&
       typeof (optionalExpensesItem) != null &&
-      optionalExpensesItem.length < 50 &&
-      typeof (optionalExpensesCost) != null &&
-      typeof (optionalExpensesCost) != '') {
+      optionalExpensesItem.length < 50) {
       console.log(`done optionalExpenses`);
-      appData.optionalExpenses[optionalExpensesItem] = optionalExpensesCost;
+      appData.optionalExpenses[i] = optionalExpensesItem;
     } else {
       i--;
     }
   }
 }
+chooseOptExpenses();
